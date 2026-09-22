@@ -1,0 +1,106 @@
+/* ===== Tokens & Reset ===== */
+:root {
+  --bg: #0a0a0f;
+  --bg-elev: #13131f;
+  --bg-elev-2: #1b1b2b;
+  --border: #26263a;
+  --text: #ececf4;
+  --text-muted: #9d9db6;
+  --violet: #8b5cf6;
+  --cyan: #22d3ee;
+  --gradient: linear-gradient(135deg, #8b5cf6 0%, #22d3ee 100%);
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+  --nav-height: 64px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 8px);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 0.5em;
+}
+
+p { margin: 0 0 1em; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.container {
+  width: min(1080px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.text-gradient {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== Section ===== */
+.section { padding: 4.5rem 0; }
+.section-alt { background: var(--bg-elev); }
+
+.section-eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.section-title { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+.section-lead { color: var(--text-muted); max-width: 60ch; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--gradient);
+  color: #0a0a0f;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+}
+.btn-primary:hover { box-shadow: 0 12px 32px rgba(34, 211, 238, 0.35); }
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover { border-color: var(--violet); color: var(--violet); }
+
+/* ===== Scroll reveal (aktif hanya jika JS jalan) ===== */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+html.js .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
