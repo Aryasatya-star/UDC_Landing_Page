@@ -5,14 +5,6 @@ saling belajar, berkolaborasi dalam project nyata, dan bertumbuh lewat networkin
 
 Dibangun dengan HTML, CSS, dan JavaScript murni (tanpa build tool / framework).
 
-## Menjalankan Lokal
-
-```bash
-python3 -m http.server 8000
-```
-
-Buka `http://localhost:8000` di browser.
-
 ## Struktur
 
 ```
