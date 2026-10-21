@@ -23,6 +23,12 @@ html {
   scroll-padding-top: calc(var(--nav-height) + 8px);
 }
 
+.nav-logo {
+  display: inline-flex; 
+  align-items: center;        
+  margin-right: 5px;    
+}
+
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
@@ -128,7 +134,7 @@ html.js .reveal.visible {
   font-size: 1.3rem;
   letter-spacing: 0.02em;
 }
-.nav-logo-dot { color: var(--cyan); }
+.nav-logo-dot { color: var(--cyan); gap: 0; }
 
 .nav-menu {
   display: flex;
